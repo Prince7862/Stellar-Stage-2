@@ -19,9 +19,9 @@ export default class Home extends Component {
             <View style={styles.container}>
                 <SafeAreaView style={styles.droidSafeArea} />
                 <ImageBackground source={require('../assets/stars.gif')} style={styles.backgroundImage}>
-                    <Image>source={require("../assets/main-icon.png")} style={styles.iconImage}</Image>
                     <View style={styles.titleBar}>
                         <Text style={styles.titleText}>Stellar App</Text>
+                        <Image source={require("../assets/main-icon.png")} style={styles.headImage}></Image>
                     </View>
                     <TouchableOpacity style={styles.routeCard} onPress={() =>
                         this.props.navigation.navigate("Space Craft")
@@ -59,12 +59,13 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
     },
     routeCard: {
-        flex: 0.25,
-        marginLeft: 50,
-        marginRight: 50,
+        flex: 0.1,
+        marginLeft: 40,
+        marginRight: 20,
         marginTop: 50,
-        borderRadius: 30,
-        backgroundColor: 'white'
+        borderRadius: 60,
+        backgroundColor: 'white',
+        top: 80
     },
     titleBar: {
         flex: 0.15,
@@ -74,34 +75,29 @@ const styles = StyleSheet.create({
     titleText: {
         fontSize: 40,
         fontWeight: "bold",
-        color: "white"
+        color: "white",
+        marginRight: -10
     },
     routeText: {
-        fontSize: 30,
+        fontSize: 20,
         fontWeight: "bold",
         color: "black",
-        marginTop: 75,
-        paddingLeft: 30
-    },
-    knowMore: {
-        paddingLeft: 30,
-        color: "red",
-        fontSize: 13
-    },
-    bgDigit: {
-        position: "absolute",
-        color: "rgba(183, 183, 183, 0.5)",
-        fontSize: 150,
-        right: 20,
-        bottom: -15,
-        zIndex: -1
+        marginTop: 13,
+        paddingLeft: 10
     },
     iconImage: {
         position: "absolute",
-        height: 200,
-        width: 200,
+        height: 80,
+        width: 80,
         resizeMode: "contain",
         right: 20,
-        top: -80
+        top: -30
+    },
+    headImage:{
+      position: "absolute",
+        height: 200,
+        width: 200,
+        justifyContent: 'center',
+        top: 30
     }
 });
